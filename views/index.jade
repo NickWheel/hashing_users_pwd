@@ -1,0 +1,50 @@
+//- if zaloginen_bliat 
+//-   p= "logged in as "+title+"!"
+//-   br
+//-   br 
+//-   //- there should be a button that makes you unlogin
+//- else
+//-   //- p= "all other shit like reg and login"
+
+
+form(action="/" method="POST" style="border: 2px solid black")
+  p Registration
+  br
+  input(type="text" value="mail" name="mail")
+  br
+  input(type="text" value="name" name="name")
+  br
+  input(type="text" value="surname" name="surname")
+  br
+  input(type="text" value="phone" name="phone")
+  br
+  input(type="text" value="date of birth" name="dob")
+  br
+  input(type="text" value="login" name="login")
+  br
+  input(type="password" value="pwd" name="pwd")
+  br
+  input(type="submit")
+
+if err
+  p(style="color: red")= err
+form(action="/login" method="POST" style="border: 2px solid black")
+  p Login
+  br
+  input(type="text" name="login" value="login")
+  br
+  input(type="password" name="pwd")
+  br
+  input(type="submit")
+
+each user in users
+  div(style="border: 2px solid black")
+    p= user.mail
+    p= user.name
+    p= user.surname
+    p= user.username
+    p= user.phone
+    p= user.dob
+    p= user.login
+    p= user.pwd
+  
